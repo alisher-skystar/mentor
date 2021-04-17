@@ -46,11 +46,28 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 15px 0;
+    /* position: relative; */
 }
 
 .navbar h1 a{
     color: var(--green);
     font-size: 35px;
+}
+
+
+
+nav label{
+    display: none;
+}
+
+
+
+
+
+
+.navbar .menu{
+    display: flex;
+    align-items: center;
 }
 
 .navbar .menu .menu-link{
@@ -62,7 +79,12 @@ nav{
     font-size: 15px;
 }
 
-.menu>.menu-link:hover{
+.menu .dropdown>.dropdown-link{
+    margin: 0 !important;
+}
+
+
+.menu .menu-link:hover{
     color: var(--green);
 }
 
@@ -114,7 +136,7 @@ nav{
 .button-link{
     background: var(--green);
     color: white !important;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 20px;
 }
 
@@ -196,6 +218,7 @@ nav{
 
 .vo-content>h3+p{
     margin-bottom: 16px;
+    font-style: italic;
 }
 
 .vo-content>.vo-in-content{
@@ -809,7 +832,307 @@ section.stats>.stats-content>h5{
 
 .footer2>.social-links>a>i:hover{
     background: #279448;
-    transform: scale(1.2);
 }
 
 
+
+
+
+
+
+
+
+
+@media screen and (max-width:1115px) {
+    .container{
+        padding: 0 50px;
+    }
+}
+
+
+
+
+@media screen and (max-width:1024px){
+    .container{
+        padding: 0 30px;
+    }
+
+
+}
+
+
+
+
+
+
+
+/* Style Tablet Version */
+
+
+@media screen and (max-width: 991px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    nav .navbar>h1>a{
+        font-size: 30px;
+    }
+
+    
+
+
+    nav label{
+        display: inline-block;
+        position: absolute;
+        right: 30px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    nav label i{
+        font-size: 25px;
+    }
+
+    .navbar>.none-check{
+        opacity: 0;
+        pointer-events: none;
+        color: white;
+        transition: .5s;
+
+        transform: translateY(100px);
+        cursor: pointer;
+    }
+
+    .navbar>input:checked ~ .all-check{
+        opacity: 0;
+        pointer-events: none;
+        transition: .3s;
+    }
+
+    .navbar>input:checked ~ .none-check{
+        opacity: 1 !important;
+        pointer-events: all !important;
+        z-index: 11 !important;
+        transform: translateY(0);
+    }
+
+    .navbar>input:checked ~ .menu>.menu-in{
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+    }
+
+    .navbar>.menu>.menu-in{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: 80%;
+        right: 30px;
+        left: 30px;
+        height: 90vh;
+        transition: .5s;
+        padding: 10px 0;
+
+        transform: translateY(100px);
+
+        opacity: 0;
+        pointer-events: none;
+        overflow-y: auto;
+
+        background: rgb(255, 255, 255);
+        border-radius: 10px;
+    }
+
+    .menu-in .menu-link{
+        padding: 10px 20px;
+    }
+
+    .dropdown-link{
+        padding: 0 !important;
+    }
+
+    .menu-in .menu-link:hover{
+        color: var(--green) !important;
+    }
+    
+    .navbar>.menu>.button-link{
+        margin-right: 40px;
+    }
+
+    .navbar>.bg-check{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.658);
+
+        transition: .5s;
+
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .navbar>input:checked ~ .bg-check{
+        opacity: 1;
+        pointer-events: all;
+    }
+    
+
+
+
+
+
+
+    section.banner{
+        height: 100vh;
+    }
+
+    section.banner>.banner-content>h1{
+        font-size: 28px;
+    }
+    section.banner>.banner-content>p{
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+
+
+
+    div.voluptatem{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    div.voluptatem>.vo-content{
+        padding-top: 20px;
+    }
+
+
+
+
+    section.stats{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+        padding: 30px 50px;
+    }
+    section.stats>.stats-content{
+        padding: 0;
+    }
+
+    section.stats>.stats-content>h1{
+        text-align: center;
+    }
+    section.stats>.stats-content>h5{
+        padding: 0;
+    }
+
+
+
+
+
+    .box1{
+        flex-direction: column;
+    }
+
+    .box1>.box1-contentFull{
+        margin: 0;
+        margin-bottom: 24px !important;
+    }
+
+    .box1>.box1-content{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 24px;
+        width: 100%;
+    }
+
+
+
+
+    .grids{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+
+
+
+
+    .courses>.courses-cards{
+        grid-template-columns: 1fr 1fr;
+        row-gap: 24px;
+    }
+
+
+
+    section.trainers{
+        grid-template-columns: 1fr 1fr;
+        row-gap: 24px;
+    }
+
+
+
+    .footer>.footer1{
+        padding: 60px 30px 30px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 30px;
+    }
+
+    .footer>.footer2{
+        padding: 24px 30px;
+    }
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 626px) {
+    .container{
+        padding: 0 12px;
+    }
+
+
+    .navbar>.menu>.button-link{
+        margin-right: 55px;
+    }
+
+
+    .grids{
+        grid-template-columns: 1fr;
+    }
+
+    .courses-cards{
+        grid-template-columns: 1fr !important;
+    }
+
+    .trainers{
+        grid-template-columns: 1fr !important;
+    }
+
+    .footer1{
+        padding: 60px 12px 30px 12px !important;
+        grid-template-columns: 1fr !important;
+    }
+
+    .footer2{
+        padding: 24px 12px !important;
+        flex-direction: column;
+    }
+
+    .footer2>.social-links{
+        margin-top: 15px !important;
+    }
+
+    .f-ulinks>.ulinks,
+    .f-oservices>.oservices{
+        row-gap: 10px !important;
+    }
+}
